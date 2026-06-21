@@ -1,0 +1,17 @@
+pandas==2.3.0
+matplotlib==3.10.3
+numpy==2.3.0
+python-dateutil==2.9.0
+pytz==2025.2
+tzdata==2025.2
+reportlab==4.4.2
+
+Install the dependencies   
+pip install -r requirements.txt
+
+What each package is used for
+Package              	Purpose
+pandas	              Parse and analyze log data
+matplotlib	          Generate attack charts and graphs
+numpy	                Data processing and calculations
+reportlab            	Generate PDF incident reports
