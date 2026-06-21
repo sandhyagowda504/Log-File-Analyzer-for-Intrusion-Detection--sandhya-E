@@ -126,3 +126,99 @@ def main():
     checker.print_summary(
         blacklist_report
     )
+    
+    # Generate Graphs
+   
+
+    print("\nGenerating Charts...")
+
+    visualizer = Visualizer()
+
+    visualizer.generate_all(
+        apache_df,
+        summary
+    )
+
+    print("Charts generated successfully.")
+
+    divider()
+
+    # Generate Reports
+
+
+    print("\nGenerating Reports...")
+
+    report = ReportGenerator()
+
+    report.generate_all(
+        brute_force,
+        dos,
+        port_scan,
+        summary
+    )
+
+    checker.save_report(
+        blacklist_report
+    )
+
+    print("Reports generated successfully.")
+
+    divider()
+
+   
+    # Final Statistics
+ 
+
+    print("\n========== FINAL SUMMARY ==========\n")
+
+    print(f"Apache Requests      : {summary['apache_requests']}")
+    print(f"SSH Attempts         : {summary['ssh_attempts']}")
+    print(f"Brute Force Attacks  : {summary['brute_force']}")
+    print(f"DoS Attacks          : {summary['dos']}")
+    print(f"Port Scan Attempts   : {summary['port_scan']}")
+    print(f"Threat Score         : {summary['threat_score']}")
+    print(f"Threat Level         : {summary['threat_level']}")
+    print(f"Blacklist Hits       : {blacklist_report['total_hits']}")
+
+    print("\nGenerated Files")
+
+    print("------------------------------")
+
+    print("✔ reports/incident_report.csv")
+    print("✔ reports/incident_report.pdf")
+    print("✔ reports/blacklist_report.csv")
+    print("✔ charts/attacks_by_ip.png")
+    print("✔ charts/attacks_by_hour.png")
+    print("✔ charts/status_codes.png")
+    print("✔ charts/threat_levels.png")
+
+    print("\nProject Completed Successfully.")
+
+    divider()
+
+
+
+# Entry Point
+
+
+if __name__ == "__main__":
+
+    try:
+
+        main()
+
+    except FileNotFoundError as error:
+
+        print("\nFile Not Found")
+
+        print(error)
+
+    except KeyboardInterrupt:
+
+        print("\nExecution Cancelled by User.")
+
+    except Exception as error:
+
+        print("\nUnexpected Error")
+
+        print(error)
