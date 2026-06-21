@@ -1,0 +1,56 @@
+# Python Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# IDE Settings
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# CSV Reports
+reports/*.csv
+reports/*.pdf
+
+# Charts
+charts/*.png
+charts/*.jpg
+
+# Python Distribution
+build/
+dist/
+*.egg-info/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Temporary Files
+*.tmp
+*.bak
+*.swp
+
+# Environment Variables
+.env
+
+# SQLite
+*.db
+*.sqlite3
